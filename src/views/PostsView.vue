@@ -59,7 +59,6 @@ export default {
       this.loading = false
     },
     async handleObserver() {
-      console.log('ahora me ves')
       this.page += 1
       this.observerLoading = true
 

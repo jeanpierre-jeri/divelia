@@ -82,12 +82,20 @@ export default {
 <style lang="postcss">
 .Comments {
   @apply pt-5 pb-28;
+
+  @screen lg {
+    @apply pb-16 px-9;
+  }
   &-h2 {
     @apply text-content text-base font-semibold;
   }
 
   &-ul {
     @apply flex flex-col gap-4 mt-4;
+
+    @screen lg {
+      @apply gap-11;
+    }
   }
 
   &-li {
@@ -108,10 +116,18 @@ export default {
 
   &-form {
     @apply mt-4;
+
+    @screen lg {
+      @apply mt-7;
+    }
   }
 
   &-input {
     @apply bg-white rounded-[40px] text-[10px] font-light text-content py-2 px-4 w-full outline-none shadow;
+
+    @screen lg {
+      @apply text-sm py-[14px] px-7;
+    }
   }
 }
 </style>

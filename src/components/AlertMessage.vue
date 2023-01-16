@@ -45,6 +45,10 @@ export default {
 .AlertMessage {
   @apply fixed top-4 left-2 right-2 flex p-4 text-sm  rounded-lg;
 
+  @screen md {
+    @apply w-1/2 left-0 right-0 mx-auto;
+  }
+
   &.warning {
     @apply text-red-700 bg-red-100;
   }

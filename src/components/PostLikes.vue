@@ -61,14 +61,26 @@ export default {
 .PostLikes {
   background-color: rgb(196 196 196 / 0.1);
   border-radius: 30px 30px 0px 0px;
-  @apply fixed bottom-0 left-0 right-0 flex justify-between gap-2 px-9 py-4;
+  @apply fixed bottom-0 left-0 right-0 flex justify-center gap-2 px-9 py-4;
+
+  @screen md {
+    @apply static bg-transparent rounded-none flex-row-reverse justify-end gap-4 p-0 mt-7;
+  }
 
   &-likes {
-    @apply flex gap-2 bg-gray rounded-[40px] text-sm font-normal text-black px-3 py-2 w-[70px];
+    @apply flex gap-2 bg-gray rounded-[40px] text-sm font-normal text-black px-3 py-2 w-[66px] flex-shrink-0;
+
+    @screen md {
+      @apply w-[90px] p-0 justify-center py-3;
+    }
   }
 
   &-reservation {
     @apply bg-primary rounded-[40px] text-sm font-semibold text-white py-2 px-14;
+
+    @screen lg {
+      @apply text-base py-[10px] px-[86px] flex-shrink-0;
+    }
   }
 }
 </style>

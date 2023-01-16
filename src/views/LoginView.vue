@@ -34,7 +34,7 @@ export default {
     @apply hidden;
 
     @screen md {
-      @apply block w-full;
+      @apply block w-full max-h-screen object-cover;
     }
   }
 

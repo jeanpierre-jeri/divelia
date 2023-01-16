@@ -3,12 +3,18 @@
     <div v-if="loading" class="grid place-items-center min-h-screen">
       <Spinner />
     </div>
-    <div v-else class="min-h-screen">
-      <div class="pt-7 px-9 relative">
-        <RouterLink :to="{ name: 'posts' }" class="absolute top-8 left-8">
+    <div v-else class="PostView">
+      <img
+        class="hidden md:block md:w-full max-h-screen object-cover"
+        src="@/assets/plazavea.webp"
+        alt="Imagen Tienda"
+      />
+      <div class="pt-7 px-9 relative md:px-[10%] md:overflow-y-auto lg:pt-24">
+        <RouterLink :to="{ name: 'posts' }" class="absolute top-8 left-8 lg:top-[104px] lg:left-[10%]">
           <BackArrow />
         </RouterLink>
-        <img class="mx-auto" width="87" height="29" src="@/assets/logo.svg" alt="Logo" />
+        <h1 class="hidden md:block md:pl-10 text-primary lg:text-3xl font-semibold">{{ post.title }}</h1>
+        <img class="mx-auto md:hidden" width="87" height="29" src="@/assets/logo.svg" alt="Logo" />
 
         <Post
           class="mt-12"
@@ -21,7 +27,7 @@
 
         <PostLikes :likes="likes" />
 
-        <Comments class="mt-9" :comments="comments" @newComment="handleNewComment" />
+        <Comments class="mt-9 lg:mt-11" :comments="comments" @newComment="handleNewComment" />
       </div>
     </div>
   </div>
@@ -84,4 +90,12 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="postcss">
+.PostView {
+  @apply min-h-screen;
+
+  @screen md {
+    @apply grid grid-cols-2 h-screen;
+  }
+}
+</style>

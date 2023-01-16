@@ -4,7 +4,11 @@
       <Spinner />
     </div>
     <div v-else class="PostsView">
-      <img class="hidden md:block md:w-full" src="@/assets/plazavea.webp" alt="Imagen Tienda" />
+      <img
+        class="hidden md:block md:w-full max-h-screen object-cover"
+        src="@/assets/plazavea.webp"
+        alt="Imagen Tienda"
+      />
       <div class="PostsView-posts">
         <img class="mx-auto md:hidden" width="87" height="29" src="@/assets/logo.svg" alt="Logo" />
         <h1 class="PostsView-title">Todas las promociones</h1>

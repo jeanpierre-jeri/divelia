@@ -90,6 +90,10 @@ export default {
   &-posts {
     @apply pt-7 overflow-y-auto;
 
+    @screen md {
+      @apply pb-24;
+    }
+
     @screen lg {
       @apply pt-24 px-[10%];
     }

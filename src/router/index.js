@@ -25,6 +25,10 @@ const routes = [
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/:catchAll(.*)',
+    redirect: '/'
   }
 ]
 

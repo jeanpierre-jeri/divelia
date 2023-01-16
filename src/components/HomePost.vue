@@ -52,7 +52,6 @@ export default {
 
     @screen lg {
       border-radius: 5px 5px 5px 14px;
-      @apply aspect-auto;
     }
   }
 

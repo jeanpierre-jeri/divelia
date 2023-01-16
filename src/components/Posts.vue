@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h2 class="text-base text-content font-semibold">Ultimas promociones</h2>
-    <div class="mt-4 grid grid-cols-1 gap-4">
+    <h2 class="text-base text-content font-semibold lg:text-lg">Ultimas promociones</h2>
+    <div class="mt-4 grid grid-cols-1 gap-4 md:gap-7">
       <Post
         v-for="{ image, id, title, description, user } in posts"
         :key="id"
@@ -17,6 +17,7 @@
 
 <script>
 import Post from '@/components/HomePost.vue'
+
 export default {
   name: 'PostsHome',
   components: {

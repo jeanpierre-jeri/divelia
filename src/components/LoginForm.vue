@@ -3,7 +3,7 @@
     <form class="Form" @submit.prevent="handleLogin">
       <!-- Image -->
       <div class="Form-field">
-        <label class="Form-label">Foto de Perfil </label>
+        <label class="Form-label Form-label-image">Foto de Perfil</label>
         <input
           ref="inputImage"
           class="Form-input Form-file"
@@ -15,7 +15,15 @@
 
         <!-- Image Placeholder -->
         <div @click="$refs.inputImage.click()" class="Form-placeholder">
-          <img :src="placeholderImage" alt="User Image" />
+          <img
+            v-if="!image"
+            :src="require('@/assets/placeholder.svg')"
+            alt="User Image"
+            width="42"
+            height="42"
+            class="lg:w-1/3 lg:aspect-square lg:block"
+          />
+          <img class="lg:w-full lg:aspect-square" v-else :src="image" alt="User Image" />
         </div>
       </div>
 
@@ -54,11 +62,6 @@ export default {
     return {
       image: null,
       errorMessage: ''
-    }
-  },
-  computed: {
-    placeholderImage() {
-      return this.image ? this.image : require('@/assets/placeholder.svg')
     }
   },
   methods: {
@@ -103,6 +106,10 @@ export default {
 .Form {
   @apply flex flex-col gap-5 px-8;
 
+  @screen lg {
+    @apply w-1/2 px-0 mx-auto;
+  }
+
   &-field {
     @apply flex flex-col gap-3;
   }
@@ -114,6 +121,16 @@ export default {
 
   &-label {
     @apply font-normal text-xs text-black;
+
+    @screen lg {
+      @apply text-base;
+    }
+
+    &-image {
+      @screen lg {
+        @apply text-lg text-center font-semibold text-[#383838] mb-10;
+      }
+    }
   }
 
   &-file {
@@ -122,14 +139,26 @@ export default {
 
   &-placeholder {
     @apply bg-gray rounded-full aspect-square mx-auto w-20 grid place-items-center overflow-hidden;
+
+    @screen lg {
+      @apply w-40 cursor-pointer;
+    }
   }
 
   &-input {
     @apply bg-gray rounded-md px-5 py-[6px] text-xs;
+
+    @screen lg {
+      @apply text-sm py-[9px];
+    }
   }
 
   &-submit {
     @apply bg-yellow rounded-[40px] text-xs text-primary text-center py-[7px] cursor-pointer;
+
+    @screen lg {
+      @apply py-3 mt-6;
+    }
   }
 }
 </style>

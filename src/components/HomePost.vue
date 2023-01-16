@@ -30,25 +30,55 @@ export default {
 .HomePost {
   @apply p-5;
 
+  @screen lg {
+    @apply flex gap-10;
+  }
+
   &-header {
     border-radius: 5px 5px 5px 14px;
     @apply relative border border-[#DCDCDC] overflow-hidden;
+
+    @screen lg {
+      @apply h-fit overflow-visible flex-shrink-0 w-60;
+    }
   }
 
   &-img {
     @apply w-full object-cover;
+
+    @screen md {
+      @apply aspect-video;
+    }
+
+    @screen lg {
+      border-radius: 5px 5px 5px 14px;
+      @apply aspect-auto;
+    }
   }
 
   &-avatar {
     @apply absolute bottom-0 left-0 w-7 aspect-square rounded-full object-cover;
+
+    @screen lg {
+      bottom: -8%;
+      @apply right-0 left-auto w-10;
+    }
   }
 
   &-h3 {
     @apply text-sm font-medium text-content mt-3;
+
+    @screen lg {
+      @apply mt-0;
+    }
   }
 
   &-p {
     @apply text-xs font-light text-content mt-2 line-clamp-2;
+
+    @screen lg {
+      @apply line-clamp-4;
+    }
   }
 }
 </style>

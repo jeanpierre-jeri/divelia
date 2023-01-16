@@ -1,24 +1,21 @@
-# divelia
+# Divelia
 
-## Project setup
-```
-pnpm install
-```
+## Description
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
+Solución al reto de divelia.
 
-### Compiles and minifies for production
-```
-pnpm run build
-```
+## Getting Started
 
-### Lints and fixes files
+### Executing program
+
+- Proyecto hecho con pnpm
+
 ```
-pnpm run lint
+pnpm i && pnpm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- En caso desees usar npm
+
+```
+rm pnpm-lock.yaml && npm i && npm run serve
+```

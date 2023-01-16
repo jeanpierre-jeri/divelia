@@ -52,6 +52,7 @@ export default {
     },
     async handleSubmit(e) {
       e.target.style.pointerEvents = 'none'
+      e.target.blur()
       const { comment } = Object.fromEntries(new FormData(e.target))
       const { name, lastname, image } = user()
       const postComment = {

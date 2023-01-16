@@ -17,7 +17,7 @@
       </li>
     </ul>
     <form class="Comments-form" @submit.prevent="handleSubmit">
-      <input class="Comments-input" type="text" name="comment" placeholder="Escribe un comentario..." />
+      <input ref="comment" class="Comments-input" type="text" name="comment" placeholder="Escribe un comentario..." />
     </form>
 
     <AlertMessage :message="errorMessage" type="warning" />
@@ -52,7 +52,7 @@ export default {
     },
     async handleSubmit(e) {
       e.target.style.pointerEvents = 'none'
-      e.target.blur()
+      this.$refs.comment.blur()
       const { comment } = Object.fromEntries(new FormData(e.target))
       const { name, lastname, image } = user()
       const postComment = {
